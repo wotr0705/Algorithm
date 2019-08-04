@@ -1,0 +1,35 @@
+//Shuffle Algorithm
+
+#include <iostream>
+#include <time.h>
+
+int main(void)
+{
+	srand((unsigned int)time(NULL));
+	int array[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int i;
+
+	for (i = 0; i < 10; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+	std::cout << std::endl;
+
+	int index1, index2, temp;
+	for (i = 0; i < 100; i++) // Shuffle 100 times
+	{
+		index1 = rand() % 10;
+		index2 = rand() % 10;
+
+		// Let's Shuffle!
+
+		temp = array[index1];
+		array[index1] = array[index2];
+		array[index2] = temp;
+	}
+	
+	for (i = 0; i < 10; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+}
